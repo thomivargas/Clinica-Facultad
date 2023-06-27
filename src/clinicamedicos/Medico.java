@@ -16,6 +16,24 @@ public class Medico implements Serializable{
     private String email;
     private String clave;
     private String tipos_medicos;
+    private String horarios_medicos;
+
+    public Medico(String id, String nombre, String email, String clave, String tipos_medicos, String horarios_medicos) {
+        this.id = id;
+        this.nombre = nombre;
+        this.email = email;
+        this.clave = clave;
+        this.tipos_medicos = tipos_medicos;
+        this.horarios_medicos = horarios_medicos;
+    }
+
+    public void setHorarios_medicos(String horarios_medicos) {
+        this.horarios_medicos = horarios_medicos;
+    }
+
+    public String getHorarios_medicos() {
+        return horarios_medicos;
+    }
 
     public Medico(String id, String nombre, String email, String clave, String tipos_medicos) {
         this.id = id;
