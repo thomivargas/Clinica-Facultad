@@ -11,13 +11,11 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
-
 /**
  *
  * @author Admin
  */
 public class w_crearMedico extends javax.swing.JFrame {
-
     /**
      * Creates new form w_crearMedico
      */
@@ -25,15 +23,12 @@ public class w_crearMedico extends javax.swing.JFrame {
         initComponents();
         try{
             File archivo = new File("myiniFinal.ini"); 
-                   //archivo.getAbsolutePath();
+            //archivo.getAbsolutePath();
             Wini ini = new Wini(new File(archivo.getAbsolutePath()));            
             medicos = ini.get("Archivos", "medicos");
             tiposMedicos = ini.get("Archivos", "tiposMedicos");
-            horariosMedicos = ini.get("Archivos", "horariosMedicos");
-            
-            //=== metodos para tipos de medico
-            
-            
+            horariosMedicos = ini.get("Archivos", "horariosMedicos");       
+            //=== metodos para medico                   
 //            this.Agregar_Medico();
 //            this.GrabarDatos_medicos();
             this.LeerDatos_medicos();
@@ -44,10 +39,8 @@ public class w_crearMedico extends javax.swing.JFrame {
             this.mostrarDatos_combo_tipos_medicos();
         } catch(Exception e){
             System.err.println(e.getMessage());
-        }   
-        
+        }    
     }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -71,13 +64,12 @@ public class w_crearMedico extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jComboBox2 = new javax.swing.JComboBox<>();
         jPanel2 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jLabel8 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(102, 153, 255));
@@ -184,66 +176,7 @@ public class w_crearMedico extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
                     .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(28, Short.MAX_VALUE))
-        );
-
-        jButton1.setText("Limpiar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-
-        jButton2.setText("Agregar");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-
-        jButton3.setText("Agregar Tipos");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
-            }
-        });
-
-        jButton4.setText("Agregar Horario");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jButton2)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton1))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jButton4)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton3)))
-                .addGap(0, 31, Short.MAX_VALUE))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
-                    .addComponent(jButton1))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton4)
-                    .addComponent(jButton3))
-                .addGap(1, 1, 1))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -259,27 +192,68 @@ public class w_crearMedico extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(jTable1);
 
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(23, Short.MAX_VALUE))
+        );
+
         jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel8.setText("Agregar Medico");
+
+        jButton2.setText("Agregar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+        jButton4.setText("Agregar Horario");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+
+        jButton3.setText("Agregar Tipos");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(24, 24, 24)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(29, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel8)
-                        .addGap(12, 12, 12)))
-                .addGap(110, 110, 110))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jButton2)
+                                .addGap(18, 18, 18)
+                                .addComponent(jButton4)
+                                .addGap(18, 18, 18)
+                                .addComponent(jButton3))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jLabel8)
+                                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -289,10 +263,13 @@ public class w_crearMedico extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton2)
+                    .addComponent(jButton4)
+                    .addComponent(jButton3))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(36, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -341,29 +318,14 @@ public class w_crearMedico extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-
         this.Agregar_Medico();
         this.GrabarDatos_medicos();
         this.mostrarDatos_medicos();
-
-        //       m.setId(this.jTextField1.getText());
-        //       m.setNombre( this.jTextField2.getText());
-        //       m.setEmail( this.jTextField3.getText());
-        //       m.setClave( this.jTextField4.getText());
-        //       m.setTipos_medicos( this.jTextField5.getText());
-        //
-        //       this.jLabel6.setText(m.getId() +"-" +m.getNombre() +"-"+m.getTipos_medicos());
-    }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-
-        //        this.jTextField1.setText("");
         this.jTextField2.setText("");
         this.jTextField3.setText("");
         this.jTextField4.setText("");
         this.jTextField5.setText("");
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -406,11 +368,8 @@ public class w_crearMedico extends javax.swing.JFrame {
     ArrayList<Medico> estructura_medicos=new ArrayList<Medico>();  
     ArrayList<Tipos_Medicos> estructura_tiposMedicos=new ArrayList<Tipos_Medicos>();
     ArrayList<HorariosMedico> estructura_horariosMedicos=new ArrayList<HorariosMedico>();
-    
-//    Medico m = new  Medico("","","","","");
-    
+    //    Medico m = new  Medico("","","","","");
     // metodos
-    
     public void LeerDatos_tipos_medicos(){
           try {
              File archivo = new File(tiposMedicos);  
@@ -420,9 +379,8 @@ public class w_crearMedico extends javax.swing.JFrame {
             fin.close();
         } catch(Exception ex) {
             ex.printStackTrace();
-        }
-       
-}
+        } 
+    }
     public void LeerDatos_tipohorario(){
           try {
              File archivo = new File(horariosMedicos);  
@@ -432,30 +390,26 @@ public class w_crearMedico extends javax.swing.JFrame {
             fin.close();
         } catch(Exception ex) {
             ex.printStackTrace();
-        }
-       
-}
-    
+        }    
+    } 
     public void mostrarDatos_combo_tipos_medicos(){
-   
         String s="";
         this.jComboBox1.removeAllItems();
         for (int i=0;i<estructura_tiposMedicos.size();i++) {           
            this.jComboBox1.addItem(estructura_tiposMedicos.get(i).getCategoria());
         }
-  }
+    }
     public void mostrarDatos_combo_horarios_medicos(){
-   
         String s="";
         this.jComboBox2.removeAllItems();
         for (int i=0;i<estructura_horariosMedicos.size();i++) {           
            this.jComboBox2.addItem(estructura_horariosMedicos.get(i).getHorario());
         }
-  }
+    }
     // metodos necesarios tipos de usuarios        
-      // metodos necesarios tipos de usuarios
- // ==== tipos de usuarios
-     public void Agregar_Medico(){
+    // metodos necesarios tipos de usuarios
+    // ==== tipos de usuarios
+    public void Agregar_Medico(){
       Medico m = new  Medico("","","","","", "");
 //        m.setId("1");
 //        m.setNombre("MedicoEjemplo");   
@@ -470,23 +424,22 @@ public class w_crearMedico extends javax.swing.JFrame {
         m.setTipos_medicos(this.jComboBox1.getSelectedItem().toString());
         m.setHorarios_medicos(this.jComboBox2.getSelectedItem().toString());
         estructura_medicos.add(m);
-       JOptionPane.showMessageDialog(null, "Medico Agregado:" );
-     
-}    
-public void GrabarDatos_medicos(){
- try {
-      File archivo = new File(medicos);  
-     FileOutputStream fos = new FileOutputStream(archivo.getAbsolutePath()); 
+       JOptionPane.showMessageDialog(null, "Medico Agregado:" );  
+    }    
+    public void GrabarDatos_medicos(){
+        try {
+            File archivo = new File(medicos);  
+            FileOutputStream fos = new FileOutputStream(archivo.getAbsolutePath()); 
             ObjectOutputStream oos = new ObjectOutputStream(fos);   
             oos.writeObject(estructura_medicos); // write MenuArray to ObjectOutputStream
             oos.close(); 
         } catch(Exception ex) {
             ex.printStackTrace();
         }
-}   
+    }   
 
-public void mostrarDatos_medicos(){
-    String matriz[][] = new String[estructura_medicos.size()][5];
+    public void mostrarDatos_medicos(){
+        String matriz[][] = new String[estructura_medicos.size()][5];
         for (int i = 0; i < estructura_medicos.size(); i++) {
             matriz[i][0]=estructura_medicos.get(i).getId();
             matriz[i][1]=estructura_medicos.get(i).getNombre();
@@ -496,7 +449,7 @@ public void mostrarDatos_medicos(){
         }
         jTable1.setModel(new javax.swing.table.DefaultTableModel(matriz, new String [] {"Id","Nombre","Email","Tipo Medico", "Horarios"}) );   
     }
- public void LeerDatos_medicos(){
+    public void LeerDatos_medicos(){
           try {
              File archivo = new File(medicos);  
             FileInputStream fin= new FileInputStream (archivo.getAbsolutePath());  
@@ -506,11 +459,8 @@ public void mostrarDatos_medicos(){
         } catch(Exception ex) {
             ex.printStackTrace();
         }   
-}    
-    
-
+    }    
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
