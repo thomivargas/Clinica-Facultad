@@ -34,8 +34,8 @@ public class w_crearHorario extends javax.swing.JFrame {
             Telefono = ini.get("App", "Telefeno");
             Web = ini.get("App", "Web");
             //=== metodos para tipos de usuarios
-//            this.Agregar_tipohorario();
-//            this.GrabarDatos_tipohorario();         
+//    this.Agregar_tipohorario();
+//    this.GrabarDatos_tipohorario();         
             this.LeerDatos_tipohorario();
             this.mostrarDatos_tiposhorario();
         }catch(Exception e){
@@ -151,6 +151,7 @@ public class w_crearHorario extends javax.swing.JFrame {
         this.Agregar_tipohorario();
         this.GrabarDatos_tipohorario();
         this.LeerDatos_tipohorario();
+        this.mostrarDatos_tiposhorario();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -194,8 +195,8 @@ public class w_crearHorario extends javax.swing.JFrame {
     
      public void Agregar_tipohorario(){
       HorariosMedico h = new HorariosMedico("","");
-//        h.setId("1");
-//        h.setHorario("Tarde");
+//    h.setId("1");
+//    h.setHorario("Tarde");
         h.setId(this.jTextField1.getText());
         h.setHorario(this.jTextField2.getText());
         estructura_horariosMedicos.add(h);
